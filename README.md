@@ -400,7 +400,7 @@ This is one of the biggest advantages of using a package manager.
 
 ---
 
-# 12. A Good Classroom Practical
+# 12. Practical
 
 Give students this ticket:
 
