@@ -2,9 +2,9 @@
 
 ## 🧑‍🏫 Linux Software Management
 
-### 1. Start with the problem
+### 1. Problem statement
 
-Tell students:
+
 
 > "Suppose our company has a new Linux server. We need to install Nginx web server. How do we install software in Linux?"
 
@@ -25,6 +25,8 @@ Download Package + Dependencies
    ↓
 Install Software
 ```
+
+<img width="293" height="172" alt="image" src="https://github.com/user-attachments/assets/986505f8-b9da-406b-936f-3d35b1562c8c" />
 
 ---
 
