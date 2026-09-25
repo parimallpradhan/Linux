@@ -31,7 +31,6 @@ Change / delete / print it
 
 It is mainly used to **search, replace, delete, or modify text** in files.
 
-### Simple definition for students
 
 > **`sed` is a Linux command used to search and modify text in files or command output.**
 
