@@ -323,6 +323,27 @@ java
 CPU = 95%
 ```
 
+In `ps aux`, **`aux` does not have one single full form**. It is a combination of three `ps` options:
+
+* **a** → show processes for **all users** (except some session-related distinction)
+* **u** → **user-oriented** format — shows user, PID, CPU, memory, etc.
+* **x** → include processes **without a controlling terminal**
+
+So:
+
+```bash
+ps aux
+```
+
+means: **Display a detailed list of running processes from all users, including processes not attached to a terminal.**
+
+### Easy way to remember
+
+**a = all users**
+**u = user-oriented details**
+**x = no terminal also**
+
+
 ### Step 4 — Investigate
 
 Don't immediately kill the process.
