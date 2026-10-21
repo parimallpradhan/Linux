@@ -621,7 +621,7 @@ It should fail.
 
 ---
 
-# Step 8 — Students Troubleshoot
+# Step 8 —  Troubleshoot
 
 Ask:
 
@@ -759,19 +759,94 @@ This makes a very nice beginner lesson:
              ✅ WORKING
 ```
 
-### Process Management :
+# Linux Process Management – Short Notes for Students
 
-1. **What is a process?**
-2. **Web server example — Nginx**
-3. Install Nginx
-4. Start Nginx
-5. Test website
-6. Find Nginx process — `ps`
-7. Find PID — `pgrep`
-8. Monitor process — `top`
-9. Create "website down" problem
-10. Troubleshoot the process/service
-11. Start/restart Nginx
-12. Verify website
+## 1. What is Process Management?
 
+A process is a program that is currently running in Linux.
+
+Example: When you start the Apache web server, Linux creates a process to run it.
+
+Why do we need process management?
+
+- Check which applications are running.
+- Identify high CPU or memory usage.
+- Stop a hung application.
+- Troubleshoot server performance.
+
+## 2. Important Process Management Commands
+
+| Command   | Use                                       | Example         |
+| --------- | ----------------------------------------- | --------------- |
+| `ps aux`  | View running processes                    | `ps aux`        |
+| `top`     | Monitor CPU and memory in real time       | `top`           |
+| `pgrep`   | Find a process by name                    | `pgrep apache2` |
+| `kill`    | Stop a process using its PID              | `kill 1234`     |
+| `kill -9` | Forcefully terminate a process            | `kill -9 1234`  |
+| `jobs`    | View background jobs in the current shell | `jobs`          |
+| `bg`      | Resume a suspended job in the background  | `bg %1`         |
+| `fg`      | Bring a job to the foreground             | `fg %1`         |
+| `&`       | Start a command in the background         | `sleep 100 &`   |
+| `free -h` | Check memory usage                        | `free -h`       |
+
+## 3. Quick Hands-on Practice
+
+Ask students to execute these commands one by one.
+
+Step 1: View processes
+
+```
+ps aux
+```
+
+Step 2: Monitor processes
+
+```
+top
+```
+
+Press `q` to exit.
+
+Step 3: Start a background process
+
+```
+sleep 300 &
+```
+
+Step 4: Find its process ID (PID)
+
+```
+pgrep -a sleep
+```
+
+Step 5: Stop the process
+
+Use the PID returned by the previous command:
+
+```
+kill <PID>
+```
+
+Step 6: Check memory
+
+```
+free -h
+```
+
+## 4. Real-time Troubleshooting Scenario
+
+Problem: The Linux server is running slowly.
+
+1. Run `top` to identify processes consuming high CPU or memory.
+2. Note the process ID (PID).
+3. Investigate the process before stopping it.
+4. If it is safe to stop, use `kill <PID>`.
+5. Check system memory using `free -h`.
+
+Interview question: What is the difference between `kill` and `kill -9`?
+
+- `kill PID` normally sends `SIGTERM`, allowing the process to shut down gracefully.
+- `kill -9 PID` sends `SIGKILL`, forcing termination without allowing cleanup.
+
+Remember: Always investigate a process before terminating it, especially on production servers.
 
